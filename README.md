@@ -31,7 +31,7 @@ The aim of this project is to create a secure remote access VPN using WireGuard 
 Use case: Access home network from anywhere and privately
 
 
-## Architecture Diagram
+## 2. Architecture Diagram
 
 - **Client connects to VPN using WireGuard:**
     
