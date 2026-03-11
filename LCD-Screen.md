@@ -15,8 +15,6 @@ This section explains how I connected a 16x2 I2C LCD screen to my Raspberry Pi t
 
 ## Wiring Diagram
 
-![LCD Wiring Diagram](images/lcd-diagram.png)
-
 The LCD screen is connected using the I2C interface.
 
 | Raspberry Pi Pin | LCD Connection |
@@ -73,6 +71,7 @@ except KeyboardInterrupt:
     sleep(2)
     lcd.clear()
 
+<img width="1920" height="1080" alt="pic11" src="https://github.com/user-attachments/assets/b48593dd-7a7c-4468-8a3a-d74508bad24f" />
 
 CTRL + O
 Enter
@@ -87,10 +86,6 @@ Install the required libraries:
 
 pip install RPLCD
 pip install smbus2
-
-Output Example
-
-The LCD screen will display something like:
 
 Create a Systemd Service
 
@@ -111,7 +106,9 @@ User=matheo
 [Install]
 WantedBy=multi-user.target
 
-Enable and Start the Service
+<img width="1920" height="1080" alt="pic13" src="https://github.com/user-attachments/assets/f4987e39-a8fc-459a-a045-20087a07acd9" />
+
+
 Reload systemd and enable the service:
 
 sudo systemctl daemon-reload
@@ -121,7 +118,17 @@ sudo systemctl start lcd-display.service
 Check the service status:
 sudo systemctl status lcd-display.service
 
+<img width="1920" height="1080" alt="pic12" src="https://github.com/user-attachments/assets/ace76bff-9990-4fb4-a8c7-8a2a801ea3e2" />
+
+Output Example
+
+The LCD screen will display something like:
 
 CPU:45.1C
 IP:192.168.0.135
+
+![LCD-Screen](https://github.com/user-attachments/assets/672cfc21-c2ca-4446-b581-95fd16d03042)
+
+
+
 
