@@ -6,6 +6,9 @@ Name: Matheo
 
 Date : June
 
+## Optional Hardware
+
+- [LCD Status Display Setup](LCD-Screen.md)
 
 ## Features
 
