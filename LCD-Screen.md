@@ -24,7 +24,8 @@ The LCD screen is connected using the I2C interface.
 | GPIO2 (SDA)      | SDA           |
 | GPIO3 (SCL)      | SCL           |
 
-<img width="1104" height="801" alt="Screenshot 2026-03-10 212226" src="https://github.com/user-attachments/assets/54c08a72-7527-42f1-a539-9e21448a1b4b" />
+<img width="1021" height="827" alt="image" src="https://github.com/user-attachments/assets/f0798a86-b660-4f22-a84a-793a0c50c532" />
+
 
 
 ---
