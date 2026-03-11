@@ -24,6 +24,9 @@ The LCD screen is connected using the I2C interface.
 | GPIO2 (SDA)      | SDA           |
 | GPIO3 (SCL)      | SCL           |
 
+<img width="1104" height="801" alt="Screenshot 2026-03-10 212226" src="https://github.com/user-attachments/assets/54c08a72-7527-42f1-a539-9e21448a1b4b" />
+
+
 ---
 
 ## Create the script file
@@ -31,7 +34,7 @@ The LCD screen is connected using the I2C interface.
 nano lcd_status.py
 
 
-Python Script
+## Python Script
 
 The following Python script displays the Raspberry Pi CPU temperature and local IP address on the LCD screen.
 
@@ -79,17 +82,17 @@ CTRL + O
 Enter
 CTRL + X
 
-Create a Python Virtual Environment
+## Create a Python Virtual Environment
 
 python3 -m venv lcd-env
 source lcd-env/bin/activate
 
-Install the required libraries:
+## Install the required libraries:
 
 pip install RPLCD
 pip install smbus2
 
-Create a Systemd Service
+## Create a Systemd Service
 
 sudo nano /etc/systemd/system/lcd-display.service
 
@@ -113,18 +116,20 @@ WantedBy=multi-user.target
 <img width="1920" height="1080" alt="pic13" src="https://github.com/user-attachments/assets/f4987e39-a8fc-459a-a045-20087a07acd9" />
 
 
-Reload systemd and enable the service:
+## Reload systemd and enable the service:
 
 sudo systemctl daemon-reload
 sudo systemctl enable lcd-display.service
 sudo systemctl start lcd-display.service
 
-Check the service status:
+## Check the service status:
+
 sudo systemctl status lcd-display.service
 
-<img width="1920" height="1080" alt="pic12" src="https://github.com/user-attachments/assets/ace76bff-9990-4fb4-a8c7-8a2a801ea3e2" />
+<img width="780" height="262" alt="image" src="https://github.com/user-attachments/assets/7a1e5352-785c-430a-ac80-971af84a03c7" />
 
-Output Example
+
+## Output Example
 
 The LCD screen will display something like:
 
