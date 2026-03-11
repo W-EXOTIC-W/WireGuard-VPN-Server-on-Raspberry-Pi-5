@@ -1,36 +1,113 @@
-# WireGuard VPN Setup on Raspberry Pi
+VPN Setup
 
-<img width="1104" height="801" alt="image" src="https://github.com/user-attachments/assets/c441d6d1-ee07-474c-beb5-67130f1896d5" />
+**Project title:** Secure Home VPN with WireGuard and Quad9 DNS provider
 
-![LCD-Screen](https://github.com/user-attachments/assets/c0a66b13-177f-4071-8e17-f3299887b1ed)
+Name: Matheo
 
-This project documents the setup and configuration of a WireGuard VPN server hosted on a Raspberry Pi, with Quad9 DNS for secure, encrypted DNS queries. The aim is to provide private, remote access to your home network while ensuring DNS privacy and tunneling all outbound traffic through your home IP.
+Date : June
 
-## 🔒 Features
 
-- ✅ Secure remote access using WireGuard
-- 🌐 Full-tunnel traffic routing for privacy
-- 🧅 DNS privacy using [Quad9](https://www.quad9.net/)
-- 🍓 Raspberry Pi as a lightweight self-hosted VPN server
-- 🔧 Port forwarding configuration and IP verification steps
-- 📌 Security considerations and upgrade paths (e.g. Pi-hole)
 
-## 📄 Files
 
-- `VPN Setup.pdf` – Complete documentation with screenshots, command outputs, and setup logic
-- `README.md` – This project overview
+Table of Contents
 
-## 🔐 Security Notes
+- [[#1. **Project Overview**|1. **Project Overview**]]
+- [[#2. **Architecture Diagram**|2. **Architecture Diagram**]]
+- [[#3. **Hardware & Software**|3. **Hardware & Software**]]
+- [[#4. **Configuration Steps**|4. **Configuration Steps**]]
+- [[#5. **Testing & Validation**|5. **Testing & Validation**]]
+- [[#6. **Security Considerations**|6. **Security Considerations**]]
+- [[#7. **Known Issues / Future Improvements**|7. **Known Issues / Future Improvements**]]
+- [[#8. **Conclusion**|8. **Conclusion**]]
 
-- DNS requests are routed securely via Quad9 to prevent ISP snooping
-- The Raspberry Pi acts only as a forwarder (no DNS logs)
-- VPN masks location and traffic contents from local network or public Wi-Fi snoopers
 
-## 🚧 Future Improvements
 
-- Add Pi-hole for ad blocking and DNS filtering
-- Switch to Cloudflare DoH/DoT with DNSCrypt
-- Auto-reconnect script for persistent VPN usage
+### 1. **Project Overview**
+
+Goal: What am I building and why?
+
+The aim of this project is to create a secure remote access VPN using WireGuard on a Raspberry Pi.
+
+Use case: Access home network from anywhere and privately
+
+
+### **Architecture Diagram**
+
+- **Client connects to VPN using WireGuard:**
+    
+    - My phone/laptop connects to my home Raspberry Pi using WireGuard.
+        
+    - This tunnel is encrypted end-to-end.
+        
+    - I configured port forwarding on my router so that even when I'm outside my house, I can still connect to my Raspberry Pi.
+        
+- **Client has DNS set to 9.9.9.9 (Quad9):**
+    
+    - I manually specified this in my WireGuard configuration.
+        
+    - This means **all DNS requests** (e.g. `google.com`) go to Quad9.
+        
+- **DNS and web traffic travel through the encrypted VPN tunnel:**
+    
+    - Everything from my client gets **tunneled into my Pi** at home.
+        
+    - This includes:
+        
+        - DNS requests → 9.9.9.9 (Quad9)
+            
+        - HTTPS/HTTP requests → websites
+            
+- **Raspberry Pi receives the traffic:**
+    
+    - It acts as my VPN gateway.
+        
+    - It **forwards DNS traffic to Quad9**, and other traffic to its final destination (e.g. websites).
+        
+- **Pi sends all outgoing traffic to my ISP (e.g. Telstra):**
+    
+    - My ISP sees traffic **coming from my Pi**, not from the original device.
+        
+    - DNS requests go to Quad9.
+        
+    - Other internet traffic goes to their respective sites (encrypted if HTTPS).
+
+### 3. **Hardware & Software**
+
+- Raspberry Pi model (Raspberry Pi 5 8GB RAM)
+- Micro HDMI
+- Mouse
+- Keyboard
+- SD Card (Preferably 128GB)
+- Monitor
+- Power Supply
+
+------------------------
+
+- OS : Raspberry Pi OS 64-bit
+
+---------------
+
+Applications Installed: WireGuard
+
+
+### 4. **Configuration Steps**
+
+
+#### A. Raspberry Pi Setup
+
+
+Downloading the Raspberry Pi OS from the main website:
+https://www.raspberrypi.com/software/
+![[Pasted image 20250522142746.png]]
+
+
+Successfully installing Raspberry Pi Imager, the utility I'll use to flash the OS onto our SD card.
+![[Pasted image 20250522142818.png]]
+
+
+
+
+
 
 ## License
 
