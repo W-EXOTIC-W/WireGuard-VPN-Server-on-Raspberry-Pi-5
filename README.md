@@ -2,6 +2,7 @@
 
 <img width="1104" height="801" alt="image" src="https://github.com/user-attachments/assets/c441d6d1-ee07-474c-beb5-67130f1896d5" />
 
+![LCD-Screen](https://github.com/user-attachments/assets/c0a66b13-177f-4071-8e17-f3299887b1ed)
 
 This project documents the setup and configuration of a WireGuard VPN server hosted on a Raspberry Pi, with Quad9 DNS for secure, encrypted DNS queries. The aim is to provide private, remote access to your home network while ensuring DNS privacy and tunneling all outbound traffic through your home IP.
 
