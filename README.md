@@ -1,4 +1,4 @@
-VPN Setup
+# WireGuard VPN Server on Raspberry Pi 5
 
 **Project title:** Secure Home VPN with WireGuard and Quad9 DNS provider
 
@@ -7,7 +7,13 @@ Name: Matheo
 Date : June
 
 
+## Features
 
+- Secure remote access using WireGuard VPN
+- Hosted on a Raspberry Pi 5
+- Static DHCP lease for reliable connectivity
+- Port forwarding configured on router
+- Client profiles generated using PiVPN
 
 ## Table of Contents
 
