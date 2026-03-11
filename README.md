@@ -110,7 +110,8 @@ Successfully installing Raspberry Pi Imager, the utility I'll use to flash the O
 The Raspberry os 64 bit is the os I will be choosing
 <img width="579" height="126" alt="image" src="https://github.com/user-attachments/assets/d1ddddd3-1322-4433-ba1e-206fbbd91c16" />
 
-All Set:
+**All Set:**
+
 <img width="680" height="482" alt="image" src="https://github.com/user-attachments/assets/eb255501-31dd-45ea-bbb1-af4bac016c24" />
 
 **Prompt for OS Customization (Skipped)** . Choosing to skip automated OS customizations so I can configure key settings like Wi-Fi, hostname, and user credentials manually later.
@@ -120,6 +121,15 @@ All Set:
 
 **Creating a New User Account** . Manually setting up a secure user account that will manage the Raspberry Pi and VPN—ensuring tight control over admin privileges.
 <img width="637" height="427" alt="image" src="https://github.com/user-attachments/assets/5305de00-83cc-44c9-a60c-f65133ab22a9" />
+
+#### C. VPN Setup
+
+**Launching PiVPN Installer from Terminal** . Executing the PiVPN installation script, which automates setup of WireGuard on the Raspberry Pi for secure remote access.
+curl -L https://install.pivpn.io | bash
+<img width="1327" height="940" alt="image" src="https://github.com/user-attachments/assets/0f1db0fa-d90f-4dad-96d0-36727e513393" />
+
+Network Interface Prompt for IP Addressing — The installer prompts me to configure the network interface and verify the static IP settings, ensuring my VPN clients can reliably reach my server.
+<img width="1350" height="975" alt="image" src="https://github.com/user-attachments/assets/5bc00d94-db31-4232-a1cd-3ebaf90a818b" />
 
 
 
