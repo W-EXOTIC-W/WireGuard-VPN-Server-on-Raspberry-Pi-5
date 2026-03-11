@@ -35,6 +35,7 @@ Python Script
 
 The following Python script displays the Raspberry Pi CPU temperature and local IP address on the LCD screen.
 
+```
 #!/usr/bin/env python3
 
 
@@ -70,6 +71,7 @@ except KeyboardInterrupt:
     lcd.write_string("Goodbye!")
     sleep(2)
     lcd.clear()
+```
 
 <img width="1920" height="1080" alt="pic11" src="https://github.com/user-attachments/assets/b48593dd-7a7c-4468-8a3a-d74508bad24f" />
 
@@ -93,6 +95,7 @@ sudo nano /etc/systemd/system/lcd-display.service
 
 Add the following configuration:
 
+```
 [Unit]
 Description=Raspberry Pi LCD Status Display
 After=network-online.target
@@ -105,6 +108,7 @@ User=matheo
 
 [Install]
 WantedBy=multi-user.target
+```
 
 <img width="1920" height="1080" alt="pic13" src="https://github.com/user-attachments/assets/f4987e39-a8fc-459a-a045-20087a07acd9" />
 
