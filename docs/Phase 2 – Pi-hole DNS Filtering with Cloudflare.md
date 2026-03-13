@@ -37,17 +37,45 @@ In this configuration, Pi-hole handles DNS filtering while Cloudflare is used as
 
 ## 2. Architecture Diagram
 
-Client Device
-↓
-WireGuard VPN Tunnel
-↓
-Raspberry Pi (VPN Gateway)
-↓
-Pi-hole DNS Sinkhole
-↓
-Cloudflare DNS Resolver
-↓
-Internet
+The introduction of Pi-hole changes how DNS traffic is handled. Instead of sending DNS queries directly to Quad9, all DNS requests are now routed through Pi-hole first, allowing ad and tracker domains to be filtered before reaching the upstream DNS resolver.
 
+```
+Client Device
+      │
+      │ Encrypted WireGuard Tunnel
+      ▼
+Raspberry Pi (VPN Gateway)
+      │
+      ▼
+Pi-hole (DNS filtering & logging)
+      │
+      ▼
+Cloudflare DNS (1.1.1.1)
+      │
+      ▼
+Internet
+```
+
+## 3. Software Requirements
+
+The following software and components were required to implement Pi-hole DNS filtering on the existing WireGuard VPN infrastructure.
+
+### Operating System
+- Raspberry Pi OS (64-bit)
+
+### Applications Installed
+- **WireGuard** – Already installed from Phase 1 to provide secure VPN tunneling.
+- **Pi-hole** – Used as a DNS sinkhole to filter advertisements and tracking domains.
+- **Cloudflare DNS (1.1.1.1)** – Configured as the upstream DNS resolver for Pi-hole.
+
+### Hardware
+- Raspberry Pi 5 (8GB RAM)
+- Stable internet connection
+- Router with port forwarding already configured (from Phase 1)
+
+### Network Requirements
+- Static DHCP lease configured on the router for the Raspberry Pi
+- Existing WireGuard VPN configuration
+- Access to the Pi-hole web interface via the Raspberry Pi's local IP address
 
 
