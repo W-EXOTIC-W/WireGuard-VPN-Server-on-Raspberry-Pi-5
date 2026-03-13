@@ -1,4 +1,4 @@
-<img width="1152" height="1536" alt="image" src="https://github.com/user-attachments/assets/636f5a73-3e1f-4667-a54d-3ebf76bc9fe8" /># Phase 2 – Pi-hole DNS Filtering with Cloudflare
+# Phase 2 – Pi-hole DNS Filtering with Cloudflare
 
 Project title: VPN Infrastructure Improvement – DNS Filtering
 
@@ -19,10 +19,10 @@ Date: June
 -  [2. Architecture Diagram](#2-architecture-diagram)
 -  [3. Software & Hardware Requirements](#3-software-&-hardware-requirements)
 -  [4. Configuration Steps](#4-configuration-steps)
-5. Testing & Validation
-6. Security Considerations
-7. Known Issues / Troubleshooting
-8. Conclusion
+-  [5. Security Considerations](#5-security-considerations)
+-  [6. Known Issues / Troubleshooting](#6known-issues-/-troubleshooting)
+-  [7. Future Improvements](#7-future-improvements)
+-  [8. Conclusion](#8-conclusion)
 
 
 ## 1. Project Overview 
@@ -166,10 +166,59 @@ Now there is no more ads:
 
 <img width="1919" height="945" alt="image" src="https://github.com/user-attachments/assets/ddcaa9ce-3d4a-4f63-8388-f3b462632ddb" />
 
+Pi-hole query log showing DNS requests originating from a WireGuard VPN client (10.102.115.3). The log confirms that DNS queries from the VPN tunnel are being processed by Pi-hole and filtered according to the configured blocklists.
+
+<img width="1250" height="934" alt="image" src="https://github.com/user-attachments/assets/88e3ae81-9e6f-4841-9e18-c078691cc2da" />
+
+During initial testing, the same WireGuard client configuration used on the phone was temporarily imported on the laptop. Later, a dedicated peer was created for the laptop, which resulted in a different VPN client IP appearing in the Pi-hole query log.
 
 
+## 5. Security Considerations
 
+Introducing Pi-hole adds an additional layer of control over DNS traffic in the network. Instead of allowing VPN clients to query external DNS servers directly, all DNS requests are routed through the local Pi-hole instance.
 
+This provides several security and privacy benefits:
 
+- **DNS filtering:** Known advertising and tracking domains are blocked using curated blocklists.
+- **Centralized DNS control:** All VPN clients use a single DNS resolver managed within the home network.
+- **Improved visibility:** The Pi-hole dashboard allows monitoring of DNS queries to identify potentially suspicious or unwanted domains.
+- **Reduced reliance on public DNS providers:** Queries are filtered locally before being forwarded to the upstream resolver.
+
+By routing VPN client DNS requests through Pi-hole, the setup improves both privacy and control over network traffic.
+
+## 6. Known Issues / Troubleshooting
+
+During testing, accessing the Pi-hole dashboard via the Raspberry Pi's LAN address (`192.168.0.135`) while connected to both the local Wi-Fi network and the WireGuard VPN on Windows resulted in a routing conflict.
+
+This occurred because the WireGuard configuration routes all traffic through the VPN tunnel, causing Windows to prefer the VPN interface for network traffic. As a result, direct LAN access to the Pi-hole dashboard was blocked.
+
+The issue was resolved by accessing the dashboard through the VPN interface address:
+
+http://10.102.115.1/admin
+
+This ensures that traffic reaches the Raspberry Pi through the WireGuard tunnel rather than the local network interface.
+
+## 7. Future Improvements
+
+While the current setup provides secure remote access and DNS filtering through Pi-hole, several improvements can further enhance the system.
+
+- **Additional WireGuard Peers**  
+  Create dedicated peers for each device instead of reusing configurations during testing. This improves client identification and access management.
+
+- **Cloudflared (DNS over HTTPS)**  
+  Integrate Cloudflared to encrypt DNS queries between Pi-hole and Cloudflare using DNS over HTTPS (DoH), improving privacy and preventing DNS interception.
+
+- **Dynamic Public IP Handling (DuckDNS)**  
+  Implement a dynamic DNS solution such as DuckDNS to handle changes in the home network's public IP address. This ensures the VPN endpoint remains reachable even if the ISP assigns a new IP.
+
+These improvements will further strengthen the reliability, privacy, and scalability of the home VPN and DNS infrastructure.
+
+## 8. Conclusion
+
+This phase of the project enhanced the original WireGuard VPN setup by introducing Pi-hole as a DNS filtering layer. By routing VPN client DNS traffic through Pi-hole and forwarding allowed queries to Cloudflare, the system now provides network-wide ad blocking and improved visibility into DNS activity.
+
+Testing confirmed that VPN clients successfully resolve domains through Pi-hole and that advertising and tracking domains are blocked according to the configured blocklists.
+
+This improvement strengthens both privacy and control over DNS traffic while maintaining the secure remote access provided by the WireGuard VPN.
 
 
