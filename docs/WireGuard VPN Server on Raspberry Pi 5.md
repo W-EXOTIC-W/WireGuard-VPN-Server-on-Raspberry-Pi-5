@@ -107,16 +107,19 @@ Applications Installed: WireGuard
 
 Downloading the Raspberry Pi OS from the main website:
 https://www.raspberrypi.com/software/
+
 <img width="1919" height="992" alt="image" src="https://github.com/user-attachments/assets/f4641c40-dd38-4889-9b00-e7853d45601b" />
 
 
 
 Successfully installing Raspberry Pi Imager, the utility I'll use to flash the OS onto our SD card.
+
 <img width="499" height="382" alt="image" src="https://github.com/user-attachments/assets/c79cfc10-65e6-4265-99b1-914a7698b4bd" />
 
 **Choosing Device, OS, and Storage in Imager**. Selecting the correct hardware (Raspberry Pi 5), preferred operating system (64-bit OS), and target SD card to prepare the bootable system image.
 
 The Raspberry os 64 bit is the os I will be choosing
+
 <img width="579" height="126" alt="image" src="https://github.com/user-attachments/assets/d1ddddd3-1322-4433-ba1e-206fbbd91c16" />
 
 **All Set:**
@@ -124,20 +127,24 @@ The Raspberry os 64 bit is the os I will be choosing
 <img width="680" height="482" alt="image" src="https://github.com/user-attachments/assets/eb255501-31dd-45ea-bbb1-af4bac016c24" />
 
 **Prompt for OS Customization (Skipped)** . Choosing to skip automated OS customizations so I can configure key settings like Wi-Fi, hostname, and user credentials manually later.
+
 <img width="679" height="482" alt="image" src="https://github.com/user-attachments/assets/ce9fe6b8-449c-4830-bb43-32dce60b8d43" />
 
 #### B. Raspberry Pi User Setup
 
 **Creating a New User Account** . Manually setting up a secure user account that will manage the Raspberry Pi and VPN—ensuring tight control over admin privileges.
+
 <img width="637" height="427" alt="image" src="https://github.com/user-attachments/assets/5305de00-83cc-44c9-a60c-f65133ab22a9" />
 
 #### C. VPN Setup
 
 **Launching PiVPN Installer from Terminal** . Executing the PiVPN installation script, which automates setup of WireGuard on the Raspberry Pi for secure remote access.
 curl -L https://install.pivpn.io | bash
+
 <img width="1327" height="940" alt="image" src="https://github.com/user-attachments/assets/0f1db0fa-d90f-4dad-96d0-36727e513393" />
 
 Network Interface Prompt for IP Addressing — The installer prompts me to configure the network interface and verify the static IP settings, ensuring my VPN clients can reliably reach my server.
+
 <img width="1350" height="975" alt="image" src="https://github.com/user-attachments/assets/5bc00d94-db31-4232-a1cd-3ebaf90a818b" />
 
 Accepting DHCP Reservation Setup — I chose to keep a DHCP reservation on my router so the Raspberry Pi always receives the same IP address without manually configuring a static IP. I set up the static lease through the router dashboard.
