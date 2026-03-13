@@ -20,7 +20,7 @@ Date: June
 -  [3. Software & Hardware Requirements](#3-software-&-hardware-requirements)
 -  [4. Configuration Steps](#4-configuration-steps)
 -  [5. Security Considerations](#5-security-considerations)
--  [6. Known Issues / Troubleshooting](#6known-issues-/-troubleshooting)
+-  [6. Known Issues / Troubleshooting](#6known-issues--troubleshooting)
 -  [7. Future Improvements](#7-future-improvements)
 -  [8. Conclusion](#8-conclusion)
 
