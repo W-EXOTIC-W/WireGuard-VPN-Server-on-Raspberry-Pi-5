@@ -15,9 +15,9 @@ Date: June
 
 ## Table of Contents
 
-[1. Project Overview](#1-project-overview)
-[2. Architecture Diagram](#2-architecture-diagram)
-[3. Software Requirements](#3-software-requirements)
+- [1. Project Overview](#1-project-overview)
+- [2. Architecture Diagram](#2-architecture-diagram)
+- [3. Software Requirements](#3-software-requirements)
 4. Configuration Steps
 5. Testing & Validation
 6. Security Considerations
