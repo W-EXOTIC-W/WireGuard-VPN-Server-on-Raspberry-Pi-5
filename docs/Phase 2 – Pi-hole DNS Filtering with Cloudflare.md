@@ -35,7 +35,7 @@ To address this limitation, Pi-hole was deployed on the Raspberry Pi to act as a
 
 In this configuration, Pi-hole handles DNS filtering while Cloudflare is used as the upstream resolver to provide fast and reliable DNS resolution.
 
-## 2. Architecture
+## 2. Architecture Diagram
 
 Client Device
 ↓
