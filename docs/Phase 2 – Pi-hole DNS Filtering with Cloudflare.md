@@ -25,7 +25,7 @@ Date: June
 8. Conclusion
 
 
-## 1. Project Overview
+## 1. Project Overview 
 
 The goal of this phase was to improve the original WireGuard VPN setup by introducing DNS filtering and advertisement blocking.
 
