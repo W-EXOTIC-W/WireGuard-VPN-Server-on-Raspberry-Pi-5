@@ -1,7 +1,9 @@
 # Phase 3 – Encrypted DNS (Cloudflared DoH)
 
 **Project title:** VPN Infrastructure Improvement – Secure DNS Upstream
+
 **Name:** Matheo
+
 **Date:** June
 
 ---
