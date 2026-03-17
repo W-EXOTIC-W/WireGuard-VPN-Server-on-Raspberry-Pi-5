@@ -107,7 +107,7 @@ So the OS now knows Cloudflared is installed
 
 <img width="1518" height="671" alt="image" src="https://github.com/user-attachments/assets/cb7772c4-e300-43a0-9c73-75ddcc637170" />
 
-<img width="658" height="477" alt="image" src="https://github.com/user-attachments/assets/f22c4ba2-424a-42e4-9cd8-73bd2d332b57" />
+<img width="346" height="42" alt="image" src="https://github.com/user-attachments/assets/fcd8fd45-98ed-4682-9140-9893cadf9d67" />
 
 I created a dedicated configuration directory for Cloudflared inside the /etc directory.
 
