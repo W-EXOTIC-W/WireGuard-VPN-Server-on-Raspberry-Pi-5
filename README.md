@@ -36,7 +36,6 @@ Quad9 DNS resolver (9.9.9.9)
 
 Full tunnel VPN routing
 
-Documentation:
 Documentation: [View Phase 1](docs/01-wireguard-vpn-setup.md)
 
 ### Phase 2 – Pi-hole DNS Filtering
@@ -53,7 +52,6 @@ Custom blocklists
 
 VPN DNS routing through Pi-hole
 
-Documentation:
 Documentation: [View Phase 2](docs/02-pihole-dns-filtering.md)
 
 ### Phase 3 – Cloudflared DNS over HTTPS
@@ -68,7 +66,6 @@ Reduced DNS spoofing risk
 
 Improved privacy for DNS traffic
 
-Documentation:
 Documentation: [View Phase 3](docs/03-cloudflared-doh.md)
 
 ### Phase 4 – Dynamic Public IP Handling
@@ -84,4 +81,4 @@ Automatic DNS record updates
 Improved reliability of remote connections
 
 Documentation:
-docs/Soon!
+Documentation: (in progress)
