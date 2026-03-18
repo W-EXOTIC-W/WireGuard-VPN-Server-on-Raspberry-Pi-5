@@ -54,7 +54,7 @@ Custom blocklists
 VPN DNS routing through Pi-hole
 
 Documentation:
-docs/02-pihole-adblocking.md
+docs/Phase 2 – Pi-hole DNS Filtering with Cloudflare.md
 
 ### Phase 3 – Cloudflared DNS over HTTPS
 
@@ -69,7 +69,7 @@ Reduced DNS spoofing risk
 Improved privacy for DNS traffic
 
 Documentation:
-docs/03-cloudflared-doh.md
+docs/Phase 3 - Pi-hole Enhancement: Cloudflared (DoH).md
 
 ### Phase 4 – Dynamic Public IP Handling
 
@@ -84,4 +84,4 @@ Automatic DNS record updates
 Improved reliability of remote connections
 
 Documentation:
-docs/04-dynamic-public-ip.md
+docs/Soon!
