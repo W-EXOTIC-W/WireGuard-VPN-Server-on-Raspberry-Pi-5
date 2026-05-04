@@ -82,3 +82,7 @@ Improved reliability of remote connections
 
 Documentation:
 Documentation: (in progress)
+
+## License
+
+This project is proprietary. All rights reserved.
